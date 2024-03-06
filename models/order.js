@@ -3,33 +3,14 @@ const handleMongooseError = require("../helpers/handleMongooseError");
 
 const orderSchema = new Schema(
   {
-    medicine: [
-      {
-        medicine: {
-          type: Array,
-        },
-        quantity: {
-          type: Number,
-          required: true,
-        },
-      },
-    ],
-    store: {
-      type: Schema.Types.ObjectId,
-      ref: "store",
-      required: true,
+    items: {
+      type: Array,
     },
-    name: {
-      type: String,
-      required: true,
+    totalPrice: {
+      type: Number,
     },
-    phone: {
-      type: String,
-      required: true,
-    },
-    address: {
-      type: String,
-      required: true,
+    user: {
+      type: Array,
     },
   },
   { versionKey: false, timestamps: true }

@@ -6,6 +6,7 @@ require("dotenv").config();
 
 const storeRouter = require("./routes/store"); //router conect
 const medicineRouter = require("./routes/medicine"); //router conect
+const orderRouter = require("./routes/order"); //router conect
 
 const app = express();
 
@@ -18,6 +19,7 @@ app.use(express.static("public"));
 
 app.use("/api/store", storeRouter); //router conect
 app.use("/api/medicine", medicineRouter); //router conect
+app.use("/api/order", orderRouter); //router conect
 
 app.use((req, res) => {
   res.status(404).json({ message: "Not found" });
